@@ -5,9 +5,9 @@ const reduceToExcerpt = (content='', maxChars=55) => {
     'undefined' !== typeof trimmedContent[maxChars] &&
     ' ' !== trimmedContent[maxChars]
   ) {
-    return reduceToExcerpt(content, maxChars-1);
+    return reduceToExcerpt(content, maxChars-1).trimEnd();
   }
-  return trimmedContent.substr(0, maxChars);
+  return trimmedContent.substr(0, maxChars).trimEnd();
 };
 
 const domParseStripHTML = (html) => {
