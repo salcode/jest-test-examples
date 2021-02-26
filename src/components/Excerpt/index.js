@@ -1,5 +1,7 @@
 const reduceToExcerpt = (content='', maxChars=55) => {
-  return content.substr(0, maxChars);
+  return content
+    .trim()
+    .substr(0, maxChars);
 };
 
 /**
