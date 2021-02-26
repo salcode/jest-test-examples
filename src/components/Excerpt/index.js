@@ -1,7 +1,13 @@
 const reduceToExcerpt = (content='', maxChars=55) => {
-  return domParseStripHTML(content)
-    .trim()
-    .substr(0, maxChars);
+  const trimmedContent = domParseStripHTML(content)
+    .trim();
+  if (
+    'undefined' !== typeof trimmedContent[maxChars] &&
+    ' ' !== trimmedContent[maxChars]
+  ) {
+    return reduceToExcerpt(content, maxChars-1);
+  }
+  return trimmedContent.substr(0, maxChars);
 };
 
 const domParseStripHTML = (html) => {
