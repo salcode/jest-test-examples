@@ -6,10 +6,10 @@ it('renders the correct length substring', () => {
   const container = document.createElement('div');
   const rendered = ReactDOM.render(
     <Excerpt
-      content="123456789"
+      content="Hi everybody"
       maxChars={4}
     />,
     container
   );
-  expect(container.textContent).toBe('1234');
+  expect(container.textContent).toBe('Hi');
 });
