@@ -1,9 +1,13 @@
 const reduceToExcerpt = (content='', maxChars=55) => {
-  return content
+  return domParseStripHTML(content)
     .trim()
     .substr(0, maxChars);
 };
 
+const domParseStripHTML = (html) => {
+     let doc = new DOMParser().parseFromString(html, 'text/html');
+     return doc.body.textContent || "";
+}
 /**
  * Display excerpt version of longer text based on maximum number of characters.
  * Truncation will occur in at a blank space (not half words).
