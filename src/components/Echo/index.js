@@ -1,7 +1,18 @@
+import { useState } from 'react';
+
 export default function Echo() {
+  const [wordsToEcho, setWordsToEcho] = useState('my default');
+
+  const onChange = (e) => setWordsToEcho(e.target.value);
+
   return (
     <div>
-      This is the echo component
+      <h2>{wordsToEcho}</h2>
+      <input
+        onChange={onChange}
+        type="text"
+        value={wordsToEcho}
+      />
     </div>
   );
 }
