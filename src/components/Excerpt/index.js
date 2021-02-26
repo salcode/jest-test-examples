@@ -10,9 +10,10 @@ import reduceToExcerpt from '../../utilities/reduceToExcerpt';
  *                   breaking mid-word).
  */
 export default function Excerpt({ content='', maxChars=55 }) {
+  const excerpt = reduceToExcerpt(content, maxChars);
   return (
     <div>
-      {reduceToExcerpt(content, maxChars)}
+      {excerpt || '...'}
     </div>
   );
 }
