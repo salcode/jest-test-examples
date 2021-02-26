@@ -20,7 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <Excerpt />
+      <Excerpt content="123456789" maxChars={4} />
       <Credits />
     </div>
   );
