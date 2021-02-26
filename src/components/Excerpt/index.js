@@ -1,3 +1,7 @@
+const reduceToExcerpt = (content='', maxChars=55) => {
+  return content.substr(0, maxChars);
+};
+
 /**
  * Display excerpt version of longer text based on maximum number of characters.
  * Truncation will occur in at a blank space (not half words).
@@ -10,7 +14,7 @@
 export default function Excerpt({ content='', maxChars=55 }) {
   return (
     <div>
-      {content.substr(0, maxChars)}
+      {reduceToExcerpt(content, maxChars)}
     </div>
   );
 }
