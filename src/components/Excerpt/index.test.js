@@ -16,6 +16,7 @@ import Excerpt from './';
   [ '                ', 5, '' ],
   [ 'One ', 4, 'One' ],
   [ ' One ', 5, 'One' ],
+  [ 'encyclopedia', 5, '' ],
 ].map(
   ([content, maxChars, expected], index) => {
     const container = document.createElement('div');
