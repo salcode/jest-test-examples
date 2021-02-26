@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Credits from './components/Credits';
+import Excerpt from './components/Excerpt';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Excerpt />
       <Credits />
     </div>
   );
