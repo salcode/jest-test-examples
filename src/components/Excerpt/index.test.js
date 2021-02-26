@@ -6,6 +6,7 @@ import Excerpt from './';
   [ 'Hi everybody', 4, 'Hi' ],
   [ '12 3456', 2, '12' ],
   [ 'One two three', 4, 'One' ],
+  [ 'One  two three', 4, 'One' ],
   [ '      One two three', 3, 'One' ],
   [ 'Hi everybody', 4, 'Hi' ],
   [ '12 345678', 4, '12' ],
