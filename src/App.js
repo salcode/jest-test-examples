@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Credits from './components/Credits';
+import Echo from './components/Echo';
 import Excerpt from './components/Excerpt';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         </a>
       </header>
       <Excerpt content="123456789" maxChars={4} />
+      <Echo />
       <Credits />
     </div>
   );
