@@ -3,13 +3,7 @@ import {
   useState
 } from 'react';
 
-const getCatFact = () => {
-  return fetch('https://cat-fact.herokuapp.com/facts/random')
-    .then(response => response.json())
-    .then(
-      (catFactObj) => catFactObj.text
-    );
-};
+import getCatFact from '../../utilities/getCatFact';
 
 export default function CatFact() {
   const [catFact, setCatFact] = useState('Loading...');
