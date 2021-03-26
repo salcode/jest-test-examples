@@ -14,10 +14,17 @@ const getCatFact = () => {
 export default function CatFact() {
   const [catFact, setCatFact] = useState('Loading...');
   useEffect(() => {
+    let mounted = true;
     getCatFact()
       .then(
-        (catFactText) => setCatFact(catFactText)
+        (catFactText) => {
+          if (mounted) {
+            setCatFact(catFactText)
+          }
+        }
       );
+
+    return () => mounted = false;
   }, []);
 
   return (
