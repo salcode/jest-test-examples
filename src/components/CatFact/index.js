@@ -22,6 +22,14 @@ export default function CatFact() {
             setCatFact(catFactText)
           }
         }
+      ).catch(
+        (e) => {
+          if (mounted) {
+            console.error('Failed to load cat fact from API', e);
+            // Use default cat fact.
+            setCatFact('A cat is not a dog.');
+          }
+        }
       );
 
     return () => mounted = false;
