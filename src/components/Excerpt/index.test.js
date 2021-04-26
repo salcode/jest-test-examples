@@ -2,7 +2,7 @@ import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import Excerpt from './';
 
-[
+describe.each([
   [ '', 5, '...' ],
   [ '', -2, '...' ],
   [ 22, 0, '...' ],
@@ -11,10 +11,10 @@ import Excerpt from './';
   [ , , '...' ],
   [ null, null, '...' ],
   [ 'one two three', 8, 'one two' ],
-].map(
-  ([content, maxChars, expected], index) => {
+])('"%s" with maxChars %i',
+  (content, maxChars, expected) => {
     const container = document.createElement('div');
-    it(`renders the correct length substring ${index}`, () => {
+    test(`renders "${expected}"`, () => {
       render(
         <Excerpt
           content={content}
