@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const getCatFact = () =>
   fetch('https://cat-fact.herokuapp.com/facts/random?amount=10')
     .then(response => response.json())
@@ -10,7 +12,8 @@ const getCatFact = () =>
     );
 
 export default function CatFact() {
+  const [ catFactText, setCatFactText ] = useState('Loading Cat Fact...');
   return (
-    <h4>Placeholder Cat Fact</h4>
+    <h4>{catFactText}</h4>
   );
 }
