@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import CatFact from './';
 
 test('Test Loading Message', async () => {
@@ -11,5 +11,10 @@ test('Test Loading Message', async () => {
 
   // Initial render text.
   getByText('Loading Cat Fact...');
+
+  // After the promise from getCatFactPromise() resolves, the text is updated.
+  await waitFor(
+    () => getByText('fact from promise')
+  );
 });
 
