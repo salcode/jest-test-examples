@@ -6,7 +6,7 @@ const getCatFact = () =>
     ))
     .then(verifiedCatFactObjects => verifiedCatFactObjects[0])
     .then(
-      catFact => catFact?.text
+      catFact => catFact?.text ?? 'Cats are not dogs'
     );
 
 export default function CatFact() {
