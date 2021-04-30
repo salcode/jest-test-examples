@@ -6,6 +6,7 @@ export default function getCatFactPromise() {
     ))
     .then(verifiedCatFactObjects => verifiedCatFactObjects[0])
     .then(
+      // If all of the responses are NOT verified, use a default fact.
       catFact => catFact?.text ?? 'Cats are not dogs'
     );
 }
