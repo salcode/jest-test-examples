@@ -1,8 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import CatFact from './components/CatFact';
 import Credits from './components/Credits';
 import Echo from './components/Echo';
 import Excerpt from './components/Excerpt';
+
+import fetchCatFactText from './utilities/fetchCatFactText';
 
 function App() {
   return (
@@ -23,6 +26,11 @@ function App() {
       </header>
       <Excerpt content="123456789" maxChars={4} />
       <Echo />
+      <hr />
+      <CatFact
+        fetchCatFactText={fetchCatFactText}
+      />
+      <hr />
       <Credits />
     </div>
   );
