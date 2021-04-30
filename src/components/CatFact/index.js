@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const getCatFact = () =>
   fetch('https://cat-fact.herokuapp.com/facts/random?amount=10')
@@ -13,6 +13,16 @@ const getCatFact = () =>
 
 export default function CatFact() {
   const [ catFactText, setCatFactText ] = useState('Loading Cat Fact...');
+
+  useEffect(() => {
+
+    const getRemoteCatFactAndSetToState = async () => {
+      const text = await getCatFact();
+      setCatFactText(text);
+    };
+
+    getRemoteCatFactAndSetToState();
+  }, []);
   return (
     <h4>{catFactText}</h4>
   );
