@@ -5,6 +5,8 @@ import Credits from './components/Credits';
 import Echo from './components/Echo';
 import Excerpt from './components/Excerpt';
 
+import getCatFactPromise from './utilities/getCatFactPromise';
+
 function App() {
   return (
     <div className="App">
@@ -25,7 +27,9 @@ function App() {
       <Excerpt content="123456789" maxChars={4} />
       <Echo />
       <hr />
-      <CatFact />
+      <CatFact
+        getCatFactPromise={getCatFactPromise}
+      />
       <hr />
       <Credits />
     </div>

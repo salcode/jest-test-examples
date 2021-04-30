@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import getCatFactPromise from '../../utilities/getCatFactPromise';
-
-export default function CatFact() {
+export default function CatFact({
+  getCatFactPromise,
+}) {
   const [ catFactText, setCatFactText ] = useState('Loading Cat Fact...');
 
   useEffect(() => {
