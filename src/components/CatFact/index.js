@@ -1,15 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const getCatFact = () =>
-  fetch('https://cat-fact.herokuapp.com/facts/random?amount=10')
-    .then(response => response.json())
-    .then(catFactObjects => catFactObjects.filter(
-      obj => obj.status.verified === true
-    ))
-    .then(verifiedCatFactObjects => verifiedCatFactObjects[0])
-    .then(
-      catFact => catFact?.text ?? 'Cats are not dogs'
-    );
+import getCatFactPromise from '../../utilities/getCatFactPromise';
 
 export default function CatFact() {
   const [ catFactText, setCatFactText ] = useState('Loading Cat Fact...');
@@ -17,7 +8,7 @@ export default function CatFact() {
   useEffect(() => {
 
     const getRemoteCatFactAndSetToState = async () => {
-      const text = await getCatFact();
+      const text = await getCatFactPromise();
       setCatFactText(text);
     };
 
