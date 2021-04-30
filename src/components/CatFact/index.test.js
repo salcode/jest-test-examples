@@ -7,12 +7,12 @@ test('Test Loading Message', async () => {
   );
   const {
     getByText,
-  } = render(<CatFact getCatFactPromise={mockCatFactPromise} />);
+  } = render(<CatFact fetchCatFactText={mockCatFactPromise} />);
 
   // Initial render text.
   getByText('Loading Cat Fact...');
 
-  // After the promise from getCatFactPromise() resolves, the text is updated.
+  // After the promise from fetchCatFactText() resolves, the text is updated.
   await waitFor(
     () => getByText('fact from promise')
   );

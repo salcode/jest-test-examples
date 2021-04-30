@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
 export default function CatFact({
-  getCatFactPromise,
+  fetchCatFactText,
 }) {
   const [ catFactText, setCatFactText ] = useState('Loading Cat Fact...');
 
   useEffect(() => {
 
     const getRemoteCatFactAndSetToState = async () => {
-      const text = await getCatFactPromise();
+      const text = await fetchCatFactText();
       setCatFactText(text);
     };
 

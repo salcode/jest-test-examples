@@ -1,4 +1,4 @@
-export default function getCatFactPromise() {
+export default function fetchCatFactText() {
   return fetch('https://cat-fact.herokuapp.com/facts/random?amount=10')
     .then(response => response.json())
     .then(catFactObjects => catFactObjects.filter(

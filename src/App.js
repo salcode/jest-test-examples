@@ -5,7 +5,7 @@ import Credits from './components/Credits';
 import Echo from './components/Echo';
 import Excerpt from './components/Excerpt';
 
-import getCatFactPromise from './utilities/getCatFactPromise';
+import fetchCatFactText from './utilities/fetchCatFactText';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
       <Echo />
       <hr />
       <CatFact
-        getCatFactPromise={getCatFactPromise}
+        fetchCatFactText={fetchCatFactText}
       />
       <hr />
       <Credits />
